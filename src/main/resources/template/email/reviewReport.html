@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html lang="ko">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=euc-kr">
+      <style>
+          th {
+              background-color: #d9d9d9;
+              font-weight: bold;
+              padding: 10px 5px;
+          }
+
+          td {
+              padding: 10px;
+          }
+
+          table {
+              border-color: #ddd; border-collapse: collapse;
+          }
+
+          #report-wrapper {
+              width: 740px;
+              padding: 20px;
+              border: 1px solid #ddd;
+              margin: 0 auto;
+          }
+
+          .text-right {
+              text-align: right;
+          }
+
+          #intro {
+              border-right: 5px solid #c00c3f;
+          }
+
+          #intro h1,h2 {
+            padding-right: 20px;
+          }
+
+          #logo {
+              font-size: 22px;
+              font-weight: bold;
+          }
+
+          #logo img {
+              vertical-align: bottom;
+              height: 26px;
+          }
+
+          hr {
+              background-color: #ddd;
+              height: 1px;
+              border: 0;
+          }
+      </style>
+      <title>FOSSLight Hub</title>
+    </head>
+    <body>
+        <div id="report-wrapper">
+            <div id="intro">
+                <div id="logo">
+                    <img src="https://fosslight.org/assets/img/logo5.png">
+                    FOSSLight
+                </div>
+                <h1 class="text-right">FOSSLight Review Report</h1>
+                <h2 class="text-right">{Project Name} {Project version}</h2>
+                <hr>
+            </div>
+
+            <!--  Report Summary table -->
+            <h3>Report Summary</h3>
+            <table border="1">
+              <tr>
+                <th>Requestor</th>
+                <td>HE, TV division, Kevin Jung</td>
+              </tr>
+              <tr>
+                <th>Project</th>
+                <td>{Project ID} {Project name} {Project version}</td>
+              </tr>
+              <tr>
+                  <th>Reviewer</th>
+                  <td>Legal Team: Yongsung Park</td>
+              </tr>
+              <tr>
+                  <th>Date</th>
+                  <td>컨펌날짜</td>
+              </tr>
+            </table>
+
+            <!--  OSS Review Table  -->
+            <h3>OSS Review</h3>
+            <table border="1">
+                <thead>
+                    <th>OSS Name</th>
+                    <th>OSS Version</th>
+                    <th>Summary Description</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>cometd</td>
+                        <td></td>
+                        <td>Files in tests are released under LGPL-2.1.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--  License Review Table  -->
+            <h3>License Review</h3>
+            <table border="1">
+                <thead>
+                    <th>License Name</th>
+                    <th>License Type</th>
+                    <th>User Guide</th>
+                    <th>Restriction</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GNU Affero General Public License v3.0</td>
+                        <td>Copyleft</td>
+                        <td>사내 사외 배포 구분없이 소스코드 공개</td>
+                        <td>Network Copyleft</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!--  Vulnerability Table-->
+            <h3>Vulnerability</h3>
+            <table border="1">
+                <thead>
+                    <th>OSS Name</th>
+                    <th>OSS Version</th>
+                    <th>Max Score</th>
+                    <th>Vulnerability Link</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apache Tomcat</td>
+                        <td>6.0.0</td>
+                        <td>9.1</td>
+                        <td>https://demo.fosslight.org/vulnerability/vulnpopup?ossName=tomcat&ossVersion=6.0.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

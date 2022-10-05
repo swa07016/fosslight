@@ -15,6 +15,7 @@
 
           table {
               border-color: #ddd; border-collapse: collapse;
+              word-break: break-all;
           }
 
           #report-wrapper {
@@ -62,7 +63,7 @@
                     FOSSLight
                 </div>
                 <h1 class="text-right">FOSSLight Review Report</h1>
-                <h2 class="text-right">{Project Name} {Project version}</h2>
+                <h2 class="text-right">$!project.getPrjName() $!project.getPrjVersion()</h2>
                 <hr>
             </div>
 
@@ -75,7 +76,7 @@
               </tr>
               <tr>
                 <th>Project</th>
-                <td>{Project ID} {Project name} {Project version}</td>
+                <td>$!project.getPrjId() $!project.getPrjName() $!project.getPrjVersion()</td>
               </tr>
               <tr>
                   <th>Reviewer</th>
@@ -83,7 +84,7 @@
               </tr>
               <tr>
                   <th>Date</th>
-                  <td>컨펌날짜</td>
+                  <td>$!date</td>
               </tr>
             </table>
 
@@ -96,11 +97,13 @@
                     <th>Summary Description</th>
                 </thead>
                 <tbody>
+                    #foreach ($ossReview in $!Oss_Review)
                     <tr>
-                        <td>cometd</td>
-                        <td></td>
-                        <td>Files in tests are released under LGPL-2.1.</td>
+                        <td>$!ossReview.getOssName()</td>
+                        <td>$!ossReview.getOssVersion()</td>
+                        <td>$!ossReview.getSummaryDescription()</td>
                     </tr>
+                    #end
                 </tbody>
             </table>
 
@@ -114,12 +117,14 @@
                     <th>Restriction</th>
                 </thead>
                 <tbody>
+                    #foreach ($licenseReview in $!License_Review)
                     <tr>
-                        <td>GNU Affero General Public License v3.0</td>
-                        <td>Copyleft</td>
-                        <td>사내 사외 배포 구분없이 소스코드 공개</td>
-                        <td>Network Copyleft</td>
+                        <td>$!licenseReview.getLicenseName()</td>
+                        <td>$!licenseReview.getLicenseType()</td>
+                        <td>$!licenseReview.getDescription()</td>
+                        <td>$!licenseReview.getRestriction()</td>
                     </tr>
+                    #end
                 </tbody>
             </table>
 
@@ -133,12 +138,14 @@
                     <th>Vulnerability Link</th>
                 </thead>
                 <tbody>
+                    #foreach ($vulnerabilityReview in $!Vulnerability_Review)
                     <tr>
-                        <td>Apache Tomcat</td>
-                        <td>6.0.0</td>
-                        <td>9.1</td>
-                        <td>https://demo.fosslight.org/vulnerability/vulnpopup?ossName=tomcat&ossVersion=6.0.0</td>
+                        <td>$!vulnerabilityReview.getOssName()</td>
+                        <td>$!vulnerabilityReview.getVersion()</td>
+                        <td>$!vulnerabilityReview.getCvssScore()</td>
+                        <td>$!Vulnerability_link.get($foreach.index)</td>
                     </tr>
+                    #end
                 </tbody>
             </table>
         </div>
